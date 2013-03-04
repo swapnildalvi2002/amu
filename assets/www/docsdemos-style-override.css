@@ -1,0 +1,362 @@
+/* These overrides to the JQuery Mobile css file are used to
+ * allow a more reasonable styling on small screen devices. 
+ */
+
+
+.ui-field-contain div.ui-input-text{
+  background-color: white;
+  	
+	}
+	
+	input.ui-input-text{
+   color: black;		
+		}
+
+.ui-field-contain .ui-btn.ui-submit{
+   width: 169px;	
+	}
+
+.ui-header .ui-title {
+	margin-right:25px;
+	margin-left:65px;
+	white-space:normal;
+}
+/* JQM: margin-left, margin-right: 90px
+ * A 90px left/right margin allows for only tiny title. 
+ */
+
+ .ui-footer .ui-title {
+	margin-right:30px;
+	margin-left:30px;
+	white-space:normal; 
+ }
+ /* JQM: margin-left, margin-right: 90px
+  *       white-space:nowrap
+  * A 90px left/right margin allows for only tiny footer text
+  * and it won't wrap by default.
+  */
+.ListTable {
+	width:100%;
+	 border-width: 0px; 
+	 background-color:#fff;
+	 border-collapse: collapse;
+}
+.ListTable .money {
+	color:#fff;
+	font-weight:normal;
+	font-size:.9em;
+	text-align: left;
+	 border-width: 0px; 
+	 background-color:#0072CF;
+	line-height:/*5%;*/ 20px;
+}
+.ListTable .even {
+	background-color:#fff;
+	color:#000;
+	font-size:.75em;
+	text-align: left;
+	line-height: /*5%;*/ 18px;
+	padding:0px;
+	font-weight:normal;
+}
+.ListTable .even td{
+	border-bottom:1px solid #ccc !important;
+	
+	
+}
+#parent{
+		border: 1px solid #aaaaaa /*{a-body-border}*/;
+	text-shadow: 0 /*{a-body-shadow-x}*/  /*{a-body-shadow-y}*/ 0 /*{a-body-shadow-radius}*/ #ffffff /*{a-body-shadow-color}*/;
+	background: #0072CF /*{a-body-background-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #0072cf /*{a-body-background-start}*/), to( #0072cf /*{a-body-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/);	
+
+	
+	}
+.calendarback
+{
+	border: 1px solid #aaaaaa /*{a-body-border}*/;
+	text-shadow: 0 /*{a-body-shadow-x}*/  /*{a-body-shadow-y}*/ 0 /*{a-body-shadow-radius}*/ #ffffff /*{a-body-shadow-color}*/;
+	background: #0072CF /*{a-body-background-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #0072cf /*{a-body-background-start}*/), to( #0072cf /*{a-body-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/);	
+	}
+
+#CalendarTable
+{
+	 height: 220px;
+	 width: 100%;
+	 font-size:.9em;
+	 background-color:#F0F0F0;
+}
+#CalendarTable tr
+{
+	padding:2px;
+}
+.calHeader
+{
+	font-weight:normal;
+	color:#fff;
+	background-color:#E9540D;
+}
+.specialDay
+{
+ background-image: url("www/img/checkbox/blue-corner.png");
+ background-repeat: no-repeat;
+ background-position: right top;
+}
+
+#calendarEvent
+{
+	width:90%;
+	margin:0 auto;
+	font-size: .9em;
+ color: white;
+	padding-top:20px;
+}
+.cols {
+	min-height: 1px;;
+	float: left;
+}
+.col1 {
+	width: 20%;
+	padding-left:5px;
+	text-align:left;
+	padding-bottom:10px;
+}
+.col2 {
+	width: 60%;
+	padding-left:5px;
+	text-align:left;
+}
+.rows {
+	width: 100%;
+	
+	
+}
+.messageMenu:hover {
+	background-color:#EFE9E0;
+}*/
+
+.messagesbackground{
+ 		border: 1px solid #aaaaaa /*{a-body-border}*/;
+	text-shadow: 0 /*{a-body-shadow-x}*/  /*{a-body-shadow-y}*/ 0 /*{a-body-shadow-radius}*/ #ffffff /*{a-body-shadow-color}*/;
+	background: #0072CF /*{a-body-background-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #0072cf /*{a-body-background-start}*/), to( #0072cf /*{a-body-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/);
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	#inmsg{
+    border-radius: 0 0 0 0;
+    border-width: 0 0 0 1px;
+    margin: 0;
+    padding: 0;
+  background-color: white;
+    border: 1px solid #D9D9D9;
+    color: gray;
+    font: bold 18px "Helvetica Neue",Helvetica;
+    text-shadow: 0 1px 0 white;
+}
+#inmsg li:first-child {
+    border-top: 0 none;
+}
+#inmsg li, #inmsg .metal li {
+    border-radius: 0 0 0 0;
+}
+#inmsg li {
+    font-size: 20px;
+}
+#inmsg li {
+    border-top: 1px solid #F2F2F2;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 10px;
+}
+#inmsg .individual li {
+    color: gray;
+    font: bold 18px "Helvetica Neue",Helvetica;
+    text-shadow: 0 1px 0 white;
+}
+
+
+
+
+
+	#outmsg{
+    border-radius: 0 0 0 0;
+    border-width: 0 0 0 1px;
+    margin: 0;
+    padding: 0;
+  background-color: white;
+    border: 1px solid #D9D9D9;
+    color: gray;
+    font: bold 18px "Helvetica Neue",Helvetica;
+    text-shadow: 0 1px 0 white;
+}
+#outmsg li:first-child {
+    border-top: 0 none;
+}
+#outmsg li, #outmsg .metal li {
+    border-radius: 0 0 0 0;
+}
+#outmsg li {
+    font-size: 20px;
+}
+#outmsg li {
+    border-top: 1px solid #F2F2F2;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 10px;
+}
+#outmsg .individual li {
+    color: gray;
+    font: bold 18px "Helvetica Neue",Helvetica;
+    text-shadow: 0 1px 0 white;
+}
+
+
+
+
+
+
+.messageLink {
+    color: #262626;
+    display: block;
+    margin: -10px;
+    overflow: hidden;
+    padding: 10px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 0 white;
+    white-space: nowrap;
+ width:90%;
+ float:left;
+}
+.messageContentDeleteDiv {
+    float: left;
+    padding-left: 2%;
+    width: 8%;
+ color: gray;
+    font: bold 18px "Helvetica Neue",Helvetica;
+    text-shadow: 0 1px 0 white;
+}
+
+#inmsg li a .subject {
+    color: #000000;
+    font-size: 14px;
+}
+#inmsg li a .preview, #inmsg li a .subject {
+   
+    display: block;
+   
+    font-weight: normal;
+}
+#inmsg li a .preview{ color: #999999; font-size: 12px;}
+
+
+
+
+
+
+
+
+#outmsg li a .subject {
+    color: #000000;
+    font-size: 14px;
+}
+#outmsg li a .preview, #outmsg li a .subject {
+   
+    display: block;
+   
+    font-weight: normal;
+}
+#outmsg li a .preview{ color: #999999; font-size: 12px;}
+
+
+
+
+
+
+
+
+.messageContentDeleteDiv a{float:right;}
+
+
+
+#indata
+{
+border:1px solid #a1a1a1;
+margin-left:10px;
+padding:10px 40px; 
+color:#000;
+background:#dddddd;
+width:65%;
+border-radius:13px;
+-moz-border-radius:13px;	
+}
+.sub
+{
+	 margin-left:10px;
+	 font-weight: bolder; 
+	 color:#333;
+	 font-size:22px;
+	 margin-top:26px;
+
+	}
+	.date
+	{
+		
+		font-size:13px;
+		color:black;
+		margin-left:65%;
+		}
+
+#new
+{
+ 		border: 1px solid #aaaaaa /*{a-body-border}*/;
+	text-shadow: 0 /*{a-body-shadow-x}*/  /*{a-body-shadow-y}*/ 0 /*{a-body-shadow-radius}*/ #ffffff /*{a-body-shadow-color}*/;
+	background: #0072CF /*{a-body-background-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #0072cf /*{a-body-background-start}*/), to( #0072cf /*{a-body-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/);
+	}
+
+#wayToAttendance,#wayToPerformance
+{
+	border: 1px solid #aaaaaa /*{a-body-border}*/;
+	text-shadow: 0 /*{a-body-shadow-x}*/  /*{a-body-shadow-y}*/ 0 /*{a-body-shadow-radius}*/ #ffffff /*{a-body-shadow-color}*/;
+	background: #0072CF /*{a-body-background-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #0072cf /*{a-body-background-start}*/), to( #0072cf /*{a-body-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient( #0072cf /*{a-body-background-start}*/, #0072cf /*{a-body-background-end}*/);
+	}
+	
+	

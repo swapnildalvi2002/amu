@@ -1,0 +1,1315 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  	
+		<!--FOR THEME EFFECT-->
+<link rel="stylesheet" href="themes/SCTheme.min.css" />
+<link rel="stylesheet" href="jquery.mobile/jquery.mobile.structure-1.3.0-rc.1.min.css" />
+<!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0-rc.1/jquery.mobile.structure-1.3.0-rc.1.min.css" />-->
+		
+<!--			<link rel="stylesheet" href="themes/skoolcloud.min.css" />-->
+<!--			<link rel="stylesheet" href="jquery.mobile/jquery.mobile.structure-1.3.0-rc.1.min.css" />-->
+			<link rel="stylesheet" href="docsdemos-style-override.css" />
+
+   <!--FOR THEME EFFECT-->
+    <!-- Libraries JS files Start-->
+    <script src="jquery.mobile/jquery-1.8.3.min.js"></script>
+  		 <script src="jquery.mobile/custom-scripting.js"></script>
+  		 
+    <script src="jquery.mobile/jquery.mobile-1.3.0-rc.1.min.js"></script>
+    <script type="text/javascript" src="javascripts/libs/prototype.js"></script>
+    <script type="text/javascript" src="javascripts/libs/cordova-2.2.0.js"></script> 
+     <!--<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+            //Load the Visualization API and the ready-made Google table visualization
+            google.load('visualization', '1', {'packages':['corechart']});
+        </script>   -->
+    <script type="text/javascript" src="javascripts/libs/googleCharts.js"></script>
+    <script type="text/javascript">
+          google.load('visualization', '1', {'packages':['corechart']});
+    </script>
+    <script type="text/javascript" src="javascripts/libs/jquery.coolautosuggest.js"></script>  
+    <script type="text/javascript" src="javascripts/main.js"></script>
+    <!-- Libraries JS files End-->
+    <!-- Application JS files Start-->
+    <script type="text/javascript" src="javascripts/config.js"></script> 
+    <script type="text/javascript" src="javascripts/CreateMenu.js"></script> 
+    <script type="text/javascript" src="javascripts/clearAllArray.js"></script>      
+    <script type="text/javascript" src="javascripts/login.js"></script>
+    <script type="text/javascript" src="javascripts/TeacherCal.js"></script>
+    <script type="text/javascript" src="javascripts/parent.js"></script>
+    <script type="text/javascript" src="javascripts/cal.js"></script>
+    <script type="text/javascript" src="javascripts/performance.js"></script>
+    <script type="text/javascript" src="javascripts/performance_graph.js"></script>
+    <script type="text/javascript" src="javascripts/attendance.js"></script>
+    <script type="text/javascript" src="javascripts/fees.js"></script>
+    <script type="text/javascript" src="javascripts/feelist.js"></script>
+    <script type="text/javascript" src="javascripts/message.js"></script>
+    <script type="text/javascript" src="javascripts/TeacherMessage.js"></script><br>
+    <script type="text/javascript" src="javascripts/ParentMessage.js"></script>
+    <!--<script src="http://debug.phonegap.com/target/target-script-min.js#skoolcloudtest"></script>-->
+      <!-- Application JS files End-->
+    <!-- Uncomment following line to access PhoneGap APIs (not necessary to use PhoneGap to package web app) -->
+    <!-- <script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>-->
+			  <style type="text/css">
+								#suggestions_holder
+								{
+									z-index:10;				
+									min-height:30px;
+									font-size:.5em;
+									color:black;
+									font-weight:normal;
+									margin-left:1.5%;
+									width:95%;
+								}
+								.suggest_item
+								{
+									width:96% !important;
+									padding:5px;
+									background-color:#CCC;
+									border-bottom:1px solid #666;
+									font-size:.95em !important;
+								}
+					</style>
+    
+  
+
+    <!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />-->
+    <!-- <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+    <!-- <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <script>
+	function login()
+	{
+	  alert("Move to second page");
+	  return true;
+	}
+	</script>-->
+    </head> 
+  <body> 
+  
+  
+  <!-- begin first page -->
+  <section id="mainpage" data-role="page" data-theme="a">
+<!-- <header data-role="header" data-id="myheader"><img src="img/skoolcloudheader.png" style="width:100%;"/></header>-->
+  
+  <img data-role="header" data-id="mainheader" src="img/skoolcloudheader.png" style="width:100%;"/>  
+ <div  data-role="content" >
+    <div data-role="fieldcontain" >
+            <label for="name"  >Username:</label><br/><br/>
+            <input type="text" name="name" id="username"/><br/><br/>
+            <label for="password" >Password:</label><br/>
+            <input type="password" name="password" id="password"/><br/><br/>
+             <input type="submit" onClick="login()" data-inline="true" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Login"/>
+           <!-- <a href="#page2" data-role="button" data-inline="true" data-theme="a" onClick="login()">Login</a>-->
+    </div>
+    </div>
+  </section>
+  
+  <!-- end first page -->
+  
+  
+   <!-- **********************************Start of Parent Access****************************************--> 
+   
+  <section id="parent" data-role="page">
+   <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>  
+            <div data-theme="a" data-role="header" >
+                <h3 style="margin-left:auto;">
+                Select Student
+                </h3>
+            </div>
+            <div data-role="content">
+                <div id="stdTable"></div>
+                </div>
+          
+    </section>     
+        
+   
+   
+   <!-- **********************************End of Parent Access****************************************-->
+   
+    
+     
+  
+  <!--********************************************* Start Home page *********************************-->
+  <section id="page2" data-role="page" data-transition="none" data-theme="a">
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+ <div data-role="header" data-theme="a">
+ <div id="buttonlist" style="display:hidden;"><a href="#parent" data-role="button" data-inline="true" data-icon="arrow-d" data-iconpos="right" class="ui-btn-right">list</a></div>
+ <h3 style="margin-left:auto;">Menu</h3>
+ </div>  
+  <div id="divContainMenu" data-transition="none">
+  </div>
+ </section>
+<!--********************************************* End Home page **************************************************-->
+
+   
+   <!-- **********************************Start of Performance icon****************************************--> 
+
+  <!-- Start of Performance page -->
+  <section id="performance" data-role="page"  data-theme="a">
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+    <!--<img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+    <div data-theme="a" data-role="header">
+     <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3 style="margin-left:auto;">
+            Performance
+        </h3>
+    </div>
+    <div data-role="content" >
+        <ul data-role="listview" data-divider-theme="" data-inset="true">
+            <li data-theme="a" onClick="performanceSubject()">
+                <a href="#subjectList">Comparative Analysis</a>
+             </li>
+            <li data-theme="a" onClick="performanceTest()">
+                <a href="#testList">Score By Test</a>
+             </li>
+        </ul>
+    </div>
+ 
+
+</section> 
+  <!-- End of Performance page -->
+ 
+ <!--******** Start of Subjectlist page ********-->
+<section id="subjectList" data-role="page" data-transition="none"  data-theme="a">
+<!--<header data-role="header" data-id="myheader" data-position="fixed"><img src="img/biu.png" style="width:100%;"/></header>-->
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+   <!--   <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+    <div data-theme="a" data-role="header">
+        <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3 style="margin-left:auto;">
+        Comparative Analysis
+        </h3>
+    </div>
+
+    <div data-role="content">
+    <div id='Slist'>
+        <ul id="subject" data-role="listview" data-divider-theme="" data-inset="true">
+        <!--<li data-theme="a" onClick="getPerformanceAnalysisData('all');">
+        <a href="#performanceGraphDisplay">All</a>-->
+        </li>
+        </ul>
+     </div>
+    </div>
+
+</section>
+   <!-- *************End of Subjectlist page **********-->
+  
+  
+   <!-- *************Start of Testlist page ************-->
+  <section id="testList" data-role="page" data-transition="none"  data-theme="a">
+  <!--<header data-role="header" data-id="myheader" data-position="fixed"><img src="img/biu.png" style="width:100%;"/></header>-->
+   <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+<!-- <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+    <div data-theme="a" data-role="header">
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3 style="margin-left:auto;">
+            Score By Test
+        </h3>
+    </div>
+
+      <div data-role="content">
+      <div id='Tlist'>
+        <ul id='test' data-role="listview" data-divider-theme="" data-inset="true">           
+        </ul>
+     </div>   
+    </div>
+  </section>
+   <!--********** End of Testlist page ********-->
+	       <!-- **********Start of Subjectgraph page *********--> 
+  <section id="performanceGraphDisplay" data-role="page" data-transition="none">
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+   <div data-theme="a" data-role="header">
+            <h3 id="subPerformanceHeader" style="margin-left:auto;">
+		       
+            </h3>
+      </div>
+
+<!--    <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+        <div id="performanceGraph" style=" min-height:500px;" data-transition="none">
+        </div>
+        </section>
+
+    <!--********* End of Subjectgraph page *********--> 
+        <!-- **********Start of Testgraph page *********-->
+    <section id="testGraphDisplay" data-role="page" data-transition="none">
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+   <div data-theme="a" data-role="header">
+            <h3 id="testPerformanceHeader" style="margin-left:auto;">
+		       
+            </h3>
+      </div>
+
+  <!-- <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+        <div id="testGraph" style=" min-height:500px;" data-transition="none">
+        </div>
+        </section>
+    <!--************* End of Testgraph page *******--> 
+   <!-- ***********************************End of Performance icon****************************************-->
+ 
+    <!-- **********************************Start of Attendance icon****************************************--> 
+ 
+  <!--******** Start of Attendance items page ********--> 
+ <section id="attendance" data-role="page"  data-theme="a" data-transition="none">
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+<!--    <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+        <div data-theme="a" data-role="header">
+         <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3 style="margin-left:auto;">
+            Attendance Analysis
+        </h3>
+    </div>
+    <div data-role="content" >
+  					<div id="Alist">  
+        <ul data-role="listview" data-divider-theme="" data-inset="true">
+              <li data-theme="a" onClick="attendance();">
+              <a href="#attendanceGraph">Full Attendance Analysis</a>
+              </li>
+              <li data-theme="a" onClick="DASpine();">
+              <a href="#DASpineGraph">Days Attended Vs Average</a>
+              </li>
+              <li data-theme="a" onClick="SDSpine();">
+              <a href="#SDSpineGraph">Sick Days Vs Average</a>
+              </li>
+              <li data-theme="a" onClick="LDSpine();">
+              <a href="#LDSpineGraph">Late Days Vs Average</a>
+              </li>
+        </ul>
+        </div>
+    </div>
+
+  </section>
+    <!--*********** End of Attendance items page *********-->
+    
+   <!--******** Ploting Attendance/graph page ********--> 
+ 
+ 
+    <section id="attendanceGraph" data-role="page" data-transition="none">
+    <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+    <div data-theme="a" data-role="header">
+    <h3 style="margin-left:auto;">
+    Full Attendance            
+    </h3>
+    </div>
+    
+    
+    <div id='mainform' style=" min-height:500px;" >
+    </div>
+    
+    </section>
+    
+    
+    <section id="DASpineGraph" data-role="page" data-transition="none">
+    <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+    <div data-theme="a" data-role="header">
+    <h3 style="margin-left:auto;">
+    Attended Vs Avg          
+    </h3>
+    </div>
+    
+    <div id="DAGraph" style=" min-height:500px;" >
+    </div>
+    
+    </section>
+    
+    
+    
+    <section id="SDSpineGraph" data-role="page" data-transition="none">
+    <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+    <div data-theme="a" data-role="header">
+    <h3 style="margin-left:auto;">
+    Sick Vs Avg            
+    </h3>
+    </div>
+    <div id="SDGraph" style=" min-height:500px; " ></div>   
+    
+    </section>
+    
+    
+    
+    <section id="LDSpineGraph" data-role="page" data-transition="none">
+    <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+    <div data-theme="a" data-role="header">
+    <h3 style="margin-left:auto;">
+    Late Vs Avg            
+    </h3>
+    </div>
+    
+    <div id="LDGraph" style=" min-height:500px; " ></div>
+    
+    </section>
+    
+    
+ 
+    <!-- **********************************End of Attendance icon****************************************--> 
+    
+     <!-- **********************************Start of Fees icon****************************************--> 
+ 
+ 
+  <!--***** Start of monthList page *****-->
+   <section id="fees" data-role="page" data-transition="none"  data-theme="a">
+  <!--<header data-role="header" data-id="myheader" data-position="fixed"><img src="img/biu.png" style="width:100%;"/></header>-->
+   <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+<!--   <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;" />-->
+    <div data-theme="a" data-role="header">
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3 style="margin-left:auto;">
+            Fees
+        </h3>
+    </div>
+    <div data-role="content">
+    <div id="monthList">
+            <ul id="month" data-role="listview" data-divider-theme="" data-inset="true">
+            <!--<li data-theme="a" onclick="getFeeData('all')"><a href="#">All</a></li>-->
+            </ul>
+    </div> 
+
+  </div> 
+  
+  </section>
+
+   <!--****** End of monthList page *******-->
+
+   <!--******* Start of FeeDetail page *********-->
+  <section id="feeDetail" data-role="page" >
+  <!--<header data-role="header" data-id="myheader" data-position="fixed"><img src="img/biu.png" style="width:100%;"/></header>-->
+   <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+<!--   <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+    <div data-theme="a" data-role="header" >
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3 style="margin-left:auto;">
+            Fee Detail
+        </h3>
+    </div>
+    <div data-role="content">
+        <div id="feeTable">
+        </div> 
+   </div> 
+  </section>
+   <!--******* End of FeeDetail page *********-->
+   
+    <!--******* Start of paymentInfo page *********-->
+
+  <section id="paymentInfo" data-role="page">
+  <!--<header data-role="header" data-id="myheader" data-position="fixed"><img src="img/biu.png" style="width:100%;"/></header>-->
+   <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+<!--   <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+    <div data-theme="a" data-role="header" >
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3 style="margin-left:auto;">
+            Payment detail
+        </h3>
+    </div>
+    <div data-role="content">
+        <div id="paymentTable">
+        </div> 
+   </div> 
+  </section>
+
+     <!--***************************************** End of Fees icon page *********************************************-->
+ 
+ 
+ 
+ 
+ <!--****************************************** Start calendar icon ************************************-->
+  <section id="calendar" class="calendarback" data-role="page">
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+<!--  <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+   <div data-theme="a" data-role="header" >
+      <a href="#page2" data-iconpos="notext" data-icon="home" ></a>
+        <h3 style="margin-left:auto;">
+            Calendar
+        </h3>
+    </div>
+
+			  <div id="calendarDisplay" class="helloCAL" data-role="content">
+			  </div>
+
+  </section>
+ <!--****************************************** Start End icon ************************************-->
+ 
+ 
+ 
+ 
+ <!-- **************************Teacher Messages Starts *******************-->
+<div id="Teachermsg" data-role="page" data-theme="a" data-transition="none">
+   <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+        <!--<img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+        <div data-theme="a" data-role="header">
+            <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+            <h3 style="margin-left:auto;">
+            Message
+            </h3>
+            <a href="#Tnew" data-iconpos="notext" data-icon="plus"></a>  
+        </div>  
+        <div data-role="content">   
+            <ul data-role="listview" data-divider-theme="" data-inset="true">
+            <li data-theme="a"><a href="#messages" onClick="Tinbox();">Inbox</a></li>
+            <li data-theme="a"><a href="#outmessages" onClick="Toutbox();">Sent</a></li>
+            </ul>
+        </div>
+
+      					 
+
+</div>
+
+<!-- ******Teacher new Messages Starts ******-->
+
+ <div id="Tnew" data-role="page" data-theme="a" >
+    <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+     <div data-theme="a" data-role="header">
+      <a data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#Teachermsg" data-icon="back" data-iconpos="left">
+            Back
+        </a>
+        <h3 style="margin-left:auto;">
+           New Message
+        </h3>
+    </div>
+
+	      <div data-role="content">   
+            <ul data-role="listview" data-divider-theme="" data-inset="true">
+            <li data-theme="a" onClick="clearTextfield();"><a href="#allStaff" >All Staff</a></li>
+            <li data-theme="a" onClick="clearTextfield();"><a href="#msgToTeacher" >Teacher</a></li>
+            <li data-theme="a" onClick="clearTextfield();"><a href="#msgToParent" >Parent</a></li>
+            <li data-theme="a" onClick="clearTextfield();"><a href="#msgToStudent" >Student</a></li>
+            </ul>
+        </div>
+				       
+	</div>
+	
+ <div id="msgToTeacher" data-role="page" data-theme="a">
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+ <div data-theme="a" data-role="header"> 
+   <a data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#Tnew" data-icon="delete" data-iconpos="right" data-mini="true">
+            Cancel
+        </a>
+         <h3 style="margin-left:auto;">
+            To Teacher
+        </h3>
+         <a onClick="teacherMessage();" data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#" data-icon="check" data-iconpos="right" data-mini="true">
+            Send
+        </a>
+       
+    </div>
+     <div data-id="mynavbar" data-role="navbar" data-iconpos="right" data-position="fixed">
+            <ul>
+                <li>
+                    <a href="#" data-transition="fade" data-theme="a" data-icon="" class="ui-btn-active ui-state-persist">
+                        Selected
+                    </a>
+                </li>
+                <li>
+                    <a  onClick="clearTextfield();" href="#allTeacher" data-transition="fade" data-theme="a" data-icon="">
+                        All
+                    </a>
+                </li>
+            </ul>
+        </div>     
+    <div data-role="content">
+      
+         <div data-role="fieldcontain">
+        <div id="Terror" ></div>
+            <fieldset data-role="controlgroup" data-mini="true">
+                <label for="individualTeacherid">
+                    To:
+                </label>
+               <input type="text"  id="individualTeacherName" name="name" value="" data-mini="true">
+                  <input type="hidden" id="individualTeacherid" name="nameid" value="">
+            </fieldset>
+                <script>
+                  var randno = Math.floor(Math.random()*1000);
+                                        jQuery("#individualTeacherName").coolautosuggest({
+											 url:ip+"teacher/autosuggestionforstudentlist/?&school_id="+localStorage.getItem('Schoolid')+"&academicyear_id="+localStorage.getItem('Academicid')+"&flag=Teacher"+"&chars=",
+                                                showThumbnail:false,
+                                                showDescription:false,
+                                                onSelected:function(result){
+                                                  // Check if the result is not null
+												  
+                                                  if(result!=null){
+                                                    jQuery("#individualTeacherid").val(result.id); // Get the ID field
+
+                                                  }
+                                                  else{
+                                                    jQuery("#individualTeacherid").val(""); // Empty the ID field
+
+                                                  }
+                                                }
+                                        });
+                         </script>   
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup" data-mini="true">
+                <label for="textinput2">
+                    Subject:
+                </label>
+                <input name="" id="TmessageSubject" placeholder="" value="" type="text">
+            </fieldset>
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <label for="textarea1">
+                    Message:
+                </label>
+                <textarea name="" id="TmessageContent" placeholder="My Message" data-mini="true" style="color:#000"></textarea>
+            </fieldset>
+        </div>
+      
+      </div> 
+   </div>
+				       
+
+
+	
+<div id="msgToParent" data-role="page" data-theme="a">
+<img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+ <div data-theme="a" data-role="header">
+   <a data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#Tnew" data-icon="delete" data-iconpos="right" data-mini="true">
+            Cancel
+        </a>
+        <h3 style="margin-left:auto;">
+            To Parent
+        </h3>
+        <a onClick="parentMessage();" data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#" data-icon="check" data-iconpos="right" data-mini="true">
+            Send
+        </a>
+        
+    </div>
+    <div data-role="content">
+          <div data-id="mynavbar" data-role="navbar" data-iconpos="right" data-position="fixed">
+            <ul>
+                <li>
+                    <a href="#" data-transition="fade" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
+                        Selected
+                    </a>
+                </li>
+                <li>
+                    <a onClick="clearTextfield();" href="#allParent" data-transition="fade" data-theme="" data-icon="">
+                        All
+                    </a>
+                </li>
+            </ul>
+        </div>  
+        <div data-role="fieldcontain">
+        <div id="Perror" ></div>
+            <fieldset data-role="controlgroup" data-mini="true">
+                <label for="individualParentid">
+                    To:
+                </label>
+                 <input type="text"  id="individualParentName" name="name" value="" data-mini="true">
+                  <input type="hidden" id="individualParentid" name="nameid" value="">
+            </fieldset>
+              <script>
+                  var randno = Math.floor(Math.random()*1000);
+                                        jQuery("#individualParentName").coolautosuggest({
+											 url:ip+"teacher/autosuggestionforstudentlist/?&school_id="+localStorage.getItem('Schoolid')+"&academicyear_id="+localStorage.getItem('Academicid')+"&flag=Parent"+"&chars=",
+                                                showThumbnail:false,
+                                                showDescription:false,
+                                                onSelected:function(result){
+                                                  // Check if the result is not null
+												  
+                                                  if(result!=null){
+                                                    jQuery("#individualParentid").val(result.id); // Get the ID field
+
+                                                  }
+                                                  else{
+                                                    jQuery("#individualParentid").val(""); // Empty the ID field
+
+                                                  }
+                                                }
+                                        });
+                         </script>   
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup" data-mini="true">
+                <label for="textinput2">
+                    Subject:
+                </label>
+                <input name="" id="PmessageSubject" placeholder="" value="" type="text">
+            </fieldset>
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <label for="textarea1">
+                    Message:
+                </label>
+                <textarea name="" id="PmessageContent" placeholder="My Message" data-mini="true" style="color:#000"></textarea>
+            </fieldset>
+        </div>
+       
+      </div> 
+   </div>
+				       
+	
+<div id="msgToStudent" data-role="page" data-theme="a" >
+
+<img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+ <div data-theme="a" data-role="header">
+  <a data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#Tnew" data-icon="delete" data-iconpos="right" data-mini="true">
+            Cancel
+        </a>
+         <h3 style="margin-left:auto;">
+            To Student
+        </h3>
+      <a data-role="button" data-theme="a" data-inline="true" data-transition="none" href="#"
+        data-icon="check" data-iconpos="right" onClick="studentMessage();" data-mini="true">
+            Send
+        </a>
+       
+    </div>
+    <div data-role="content">
+                   
+            <div data-id="mynavbar" data-role="navbar" data-iconpos="right" data-position="fixed">
+            <ul>
+                <li>
+                    <a href="#" data-transition="fade" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
+                        Selected
+                    </a>
+                </li>
+                <li>
+                    <a  onClick="clearTextfield();" href="#allStudent" data-transition="fade" data-theme="" data-icon="">
+                        All
+                    </a>
+                </li>
+            </ul>
+        </div>  
+        <div data-role="fieldcontain">
+           <div id="Serror" ></div>
+            <fieldset data-role="controlgroup" data-mini="true">
+                <label for="individualStudentid">
+                    To:
+                </label>
+                 <input type="text"  id="individualStudentName" name="name" value="" data-mini="true">
+                  <input type="hidden" id="individualStudentid" name="nameid" value="">
+                  
+            </fieldset>
+           <script>
+                  var randno = Math.floor(Math.random()*1000);
+                                        jQuery("#individualStudentName").coolautosuggest({
+											 url:ip+"teacher/autosuggestionforstudentlist/?&school_id="+localStorage.getItem('Schoolid')+"&academicyear_id="+localStorage.getItem('Academicid')+"&flag=Student&chars=",
+                                                showThumbnail:false,
+                                                showDescription:false,
+                                                onSelected:function(result){
+                                                  // Check if the result is not null
+												  
+                                                  if(result!=null){
+                                                    jQuery("#individualStudentid").val(result.id); // Get the ID field
+
+                                                  }
+                                                  else{
+                                                    jQuery("#individualStudentid").val(""); // Empty the ID field
+
+                                                  }
+                                                }
+                                        });
+                         </script>   
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup" data-mini="true">
+                <label for="textinput2">
+                    Subject:
+                </label>
+                <input name="" id="SmessageSubject" placeholder="" value="" type="text">
+            </fieldset>
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <label for="textarea1">
+                    Message:
+                </label>
+                <textarea name="" id="SmessageContent" placeholder="My Message" data-mini="true" style="color:#000"></textarea>
+            </fieldset>
+        </div>
+        
+      </div> 
+   </div>
+
+
+	<!--All Teacher Start-->			       
+    
+	<div id="allTeacher" data-role="page" data-theme="a">
+	<img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+ <div data-theme="a" data-role="header">
+        <a data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#Tnew" data-icon="delete" data-iconpos="right" data-mini="true">
+            Cancel
+        </a>
+        <h3 style="margin-left:auto;">
+            To All Teacher
+        </h3>
+        <a onClick="sendMessageToAllTeacher();" data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#" data-icon="check" data-iconpos="right" data-mini="true">
+            Send
+        </a>
+        
+    </div>
+      <div data-id="mynavbar" data-role="navbar" data-iconpos="right" data-position="fixed">
+            <ul>
+                <li>
+                    <a onClick="clearTextfield();" href="#msgToTeacher"  data-transition="fade" data-theme="" data-icon="">
+                        Selected
+                    </a>
+                </li>
+                <li>
+                    <a   href="#" data-transition="fade" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
+                        All
+                    </a>
+                </li>
+            </ul>
+        </div>  
+    <div data-role="content">
+   
+        <div data-role="fieldcontain">
+        <div id="allTerror"></div>
+            <fieldset data-role="controlgroup" data-mini="true">
+                <label for="textinput2">
+                    Subject:
+                </label>
+                <input name="" id="allTSubject" placeholder="" value="" type="text">
+            </fieldset>
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <label for="textarea1">
+                    Message:
+                </label>
+                <textarea name="" id="allTContent" placeholder="My Message" data-mini="true" style="color:#000"></textarea>
+            </fieldset>
+        </div>
+        
+    </div>	
+	
+	</div>
+    
+		<!--All Teacher End-->			       
+        
+        	<!--All Parent Start-->			       
+	<div id="allParent" data-role="page" data-theme="a">
+	<img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+ <div data-theme="a" data-role="header">
+         <a data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#Tnew" data-icon="delete" data-iconpos="right" data-mini="true">
+            Cancel
+        </a>
+        <h3 style="margin-left:auto;">
+            To All Parent
+        </h3>
+        <a onClick="sendMessageToAllParent();" data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#" data-icon="check" data-iconpos="right" data-mini="true">
+            Send
+        </a>
+        
+    </div>
+    <div data-role="content">
+     <div data-id="mynavbar" data-role="navbar" data-iconpos="right" data-position="fixed">
+            <ul>
+                <li>
+                    <a onClick="clearTextfield();" href="#msgToParent"  data-transition="fade" data-theme="" data-icon="">
+                        Selected
+                    </a>
+                </li>
+                <li>
+                    <a   href="#" data-transition="fade" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
+                        All
+                    </a>
+                </li>
+            </ul>
+        </div>  
+        <div data-role="fieldcontain">
+         <div id="allPerror"></div>
+            <fieldset data-role="controlgroup" data-mini="true">
+                <label for="textinput2">
+                    Subject:
+                </label>
+                <input name="" id="allPSubject" placeholder="" value="" type="text">
+            </fieldset>
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <label for="textarea1">
+                    Message:
+                </label>
+                <textarea name="" id="allPContent" placeholder="My Message" data-mini="true" style="color:#000"></textarea>
+            </fieldset>
+        </div>
+       
+    </div>	
+	
+	</div>
+	
+    <!--All Parent End-->			       
+    
+    
+    <!--All Student Start-->			       
+    
+	<div id="allStudent" data-role="page" data-theme="a">
+	<img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+ <div data-theme="a" data-role="header">
+        <a data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#Tnew" data-icon="delete" data-iconpos="right" data-mini="true">
+            Cancel
+        </a>
+        <h3 style="margin-left:auto;">
+            To All Student
+        </h3>
+        <a onClick="sendMessageToAllStudent();" data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#" data-icon="check" data-iconpos="right" data-mini="true">
+            Send
+        </a>
+        
+    </div>
+    <div data-role="content">
+     <div data-id="mynavbar" data-role="navbar" data-iconpos="right" data-position="fixed">
+            <ul>
+                <li>
+                    <a onClick="clearTextfield();" href="#msgToStudent"  data-transition="fade" data-theme="" data-icon="">
+                        Selected
+                    </a>
+                </li>
+                <li>
+                    <a   href="#" data-transition="fade" data-theme="" data-icon="" class="ui-btn-active ui-state-persist">
+                        All
+                    </a>
+                </li>
+            </ul>
+        </div>  
+        <div data-role="fieldcontain">
+         <div id="allSerror"></div>
+            <fieldset data-role="controlgroup" data-mini="true">
+                <label for="textinput2">
+                    Subject:
+                </label>
+                <input name="" id="allSSubject" placeholder="" value="" type="text">
+            </fieldset>
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <label for="textarea1">
+                    Message:
+                </label>
+                <textarea name="" id="allSContent" placeholder="My Message" data-mini="true" style="color:#000"></textarea>
+            </fieldset>
+        </div>
+       
+    </div>	
+	
+	</div>
+    
+        <!--All Student End-->		
+        
+        
+     
+       <!--All Staff Start-->			       
+    
+	<div id="allStaff" data-role="page" data-theme="a">
+	<img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+ <div data-theme="a" data-role="header">
+        <a data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#Tnew" data-icon="delete" data-iconpos="right" data-mini="true">
+            Cancel
+        </a>
+         <h3 style="margin-left:auto;">
+            To All Staff
+        </h3>
+        <a onClick="sendMessageToAllStaff();" data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#" data-icon="check" data-iconpos="right" data-mini="true">
+            Send
+        </a>
+       
+    </div>
+    <div data-role="content">
+        <div data-role="fieldcontain">
+         <div id="allStafferror"></div>
+            <fieldset data-role="controlgroup" data-mini="true">
+                <label for="textinput2">
+                    Subject:
+                </label>
+                <input name="" id="allStaffSubject" placeholder="" value="" type="text">
+            </fieldset>
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <label for="textarea1">
+                    Message:
+                </label>
+                <textarea name="" id="allStaffContent" placeholder="My Message" data-mini="true" style="color:#000"></textarea>
+            </fieldset>
+        </div>
+        
+    </div>	
+	
+	</div>
+    
+        <!--All Staff End-->		
+        
+        
+        	       
+        
+        
+<!-- ******Teacher new Messages Ends ******-->
+ 
+<!-- **************************Teacher Messages Ends *******************-->
+ <!--**************************Parent Message Starts Here *******************-->
+ <div id="Parentmsg" data-role="page" data-theme="a" data-transition="none">
+   <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+        <!--<img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+        <div data-theme="a" data-role="header">
+            <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+            <h3 style="margin-left:auto;">
+            Message
+            </h3>
+            <a href="#Pnew" data-iconpos="notext" data-icon="plus"></a>  
+        </div>  
+        <div data-role="content">   
+            <ul data-role="listview" data-divider-theme="" data-inset="true">
+            <li data-theme="a"><a href="#messages" onClick="Pinbox();">Inbox</a></li>
+            <li data-theme="a"><a href="#outmessages" onClick="Poutbox();">Sent</a></li>
+            </ul>
+        </div>
+
+</div>
+ 
+ 
+ <div id="Pnew" data-role="page" data-theme="a" data-transition="none">
+   <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+ <div data-theme="a" data-role="header"> 
+   <a data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#Parentmsg" data-icon="delete" data-iconpos="right" data-mini="true">
+            Cancel
+        </a>
+         <h3 style="margin-left:auto;">
+           Compose
+        </h3>
+         <a onClick="parentSendMessageToTeacher();" data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#" data-icon="check" data-iconpos="right" data-mini="true">
+            Send
+        </a>
+       
+    </div>
+    <div data-role="content">
+     <div data-role="fieldcontain">
+        <div id="parentmsgerror" ></div>
+            <fieldset data-role="controlgroup" data-mini="true">
+                <label for="PTeacherid">
+                    To:
+                </label>
+               <input type="text"  id="PTeacherName" name="name" value="" data-mini="true">
+                  <input type="hidden" id="PTeacherid" name="nameid" value="">
+            </fieldset>
+                <script>
+                  var randno = Math.floor(Math.random()*1000);
+                                        jQuery("#PTeacherName").coolautosuggest({
+											 url:ip+"teacher/autosuggestionforstudentlist/?&school_id="+localStorage.getItem('Schoolid')+"&academicyear_id="+localStorage.getItem('Academicid')+"&flag=Teacher"+"&chars=",
+                                                showThumbnail:false,
+                                                showDescription:false,
+                                                onSelected:function(result){
+                                                  // Check if the result is not null
+												  
+                                                  if(result!=null){
+                                                    jQuery("#PTeacherid").val(result.id); // Get the ID field
+
+                                                  }
+                                                  else{
+                                                    jQuery("#PTeacherid").val(""); // Empty the ID field
+
+                                                  }
+                                                }
+                                        });
+                         </script>   
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup" data-mini="true">
+                <label for="textinput2">
+                    Subject:
+                </label>
+                <input name="" id="PTmessageSubject" placeholder="" value="" type="text">
+            </fieldset>
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <label for="textarea1">
+                    Message:
+                </label>
+                <textarea name="" id="PTmessageContent" placeholder="My Message" data-mini="true" style="color:#000"></textarea>
+            </fieldset>
+        </div>
+      
+      </div> 
+
+</div>
+<!--**************************Start of way to Attendance**********************-->
+
+<section id="wayToAttendance" data-role="page">
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+        <!--<img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+        <div data-theme="a" data-role="header">
+            <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+            <h3 style="margin-left:auto;">
+            Student Attendance
+            </h3>
+          </div>
+    <div data-role="content">
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <label for="textinput1" style="color:white;">
+                    Student Name:
+                   
+                </label>
+                  <br/> <br/> <input type="text"  id="SattendanceName" name="name" value="" data-mini="true">
+                  <input type="hidden" id="Sattendanceid" name="nameid" value=""> 
+               
+            </fieldset>
+               <script>       
+                  var randno = Math.floor(Math.random()*1000);
+                                        jQuery("#SattendanceName").coolautosuggest({
+											 url:ip+"teacher/autosuggestionforstudentlist/?&school_id="+localStorage.getItem('Schoolid')+"&academicyear_id="+localStorage.getItem('Academicid')+"&randno="+randno+"&chars=",
+                                                showThumbnail:false,
+                                                showDescription:false,
+                                                onSelected:function(result){
+                                                  // Check if the result is not null
+												  
+                                                  if(result!=null){
+                                                    jQuery("#Sattendanceid").val(result.id); // Get the ID field
+
+                                                  }
+                                                  else{
+                                                    jQuery("#Sattendanceid").val(""); // Empty the ID field
+
+                                                  }
+                                                }
+                                        });
+                  </script>
+        </div>
+          
+        <a onClick="goSetUserIdforAttendance();" data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#" data-icon="arrow-r" data-iconpos="right" data-mini="true">
+            Go
+        </a>
+         <div id="warningforAttendance" style="display:none; padding-top:10px; color:white;"> Please Enter name First</div>
+    </div>
+ </section>
+ <!--**************************End of way to Attendance**********************-->
+ 
+ 
+ <!--**************************Start of way to Performance**********************-->
+<section id="wayToPerformance" data-role="page" data-transition="none">
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+        <!--<img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+        <div data-theme="a" data-role="header">
+            <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+            <h3 style="margin-left:auto;">
+            Student Performance
+            </h3>
+          </div>
+    <div data-role="content">
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <label for="textinput1" style="color:white;">
+                    Student Name:
+                   
+                </label>
+                   <br/> <br/><input type="text"  id="SperformanceName" name="name" value="" data-mini="true">
+                  <input type="hidden" id="Sperformanceid" name="nameid" value=""> 
+               
+            </fieldset>
+               <script>       
+                  var randno = Math.floor(Math.random()*1000);
+                                        jQuery("#SperformanceName").coolautosuggest({
+											 url:ip+"teacher/autosuggestionforstudentlist/?&school_id="+localStorage.getItem('Schoolid')+"&academicyear_id="+localStorage.getItem('Academicid')+"&randno="+randno+"&chars=",
+                                                showThumbnail:false,
+                                                showDescription:false,
+                                                onSelected:function(result){
+                                                  // Check if the result is not null
+												  
+                                                  if(result!=null){
+                                                    jQuery("#Sperformanceid").val(result.id); // Get the ID field
+
+                                                  }
+                                                  else{
+                                                    jQuery("#Sperformanceid").val(""); // Empty the ID field
+
+                                                  }
+                                                }
+                                        });
+                  </script>
+        </div>
+      
+        <a onClick="goSetUserIdforPerformance();" data-role="button" data-inline="true" data-transition="none" data-theme="a"
+        href="#" data-icon="arrow-r" data-iconpos="right" data-mini="true">
+            Go
+        </a>
+          <div id="warningforPerformance" style="display:none; padding-top:10px; color:white;"> Please Enter name First</div>
+    </div>
+ </section>
+  <!--**************************End of way to Performance**********************-->
+ 
+ 
+ 
+  
+  <!--******************************** Start message page ************************************-->
+  <section id="Bothmsg" data-role="page" data-transition="none"  data-theme="a">
+   <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+        <!--<img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+        <div data-theme="a" data-role="header">
+            <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+            <h3 style="margin-left:auto;">
+            Message
+            </h3>
+            <a onClick="clearTextfield();" href="#new" data-iconpos="notext" data-icon="plus"></a>  
+        </div>
+        <div data-role="content">   
+            <ul data-role="listview" data-divider-theme="" data-inset="true">
+            <li data-theme="a"><a href="#messages" onClick="inbox();">Inbox</a></li>
+            <li data-theme="a"><a href="#outmessages" onClick="outbox();">Sent</a></li>
+            </ul>
+        </div>
+  </section>   
+   <!--INBOX-->
+  <div id="messages" data-role="page" class="messagesbackground">
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+ <div data-theme="a" data-role="header">
+            <h3 style="margin-left:auto;">
+            Inbox
+            </h3>
+     </div>
+      <!--  <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+            <ul id="inmsg" class="inmsgCONTENT" data-role="listview" data-divider-theme="" data-inset="true">
+           
+            </ul>
+       
+  </div>
+  <!--OUTBOX-->
+  <div id="outmessages" class="messagesbackground" data-role="page">
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+  <div data-theme="a" data-role="header">
+            <h3 style="margin-left:auto;">
+            Send Items
+            </h3>
+      </div>
+      <!--  <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+            <ul id="outmsg" class="outmsgCONTENT" data-role="listview" data-divider-theme="" data-inset="true">
+           
+            </ul>
+       
+  </div>    
+      
+      
+<div id="message" data-role="page" style="	background-color:#E8E8E8;">
+     <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+  <div data-theme="a" data-role="header">
+            <h3 id="theinHeader" style="margin-left:auto;">
+            
+            </h3>
+      </div>
+     
+    <!-- <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+        <!--<a class="button disabled blueButton" style=" float: left;margin-left: 82px;position: relative;" href="#" onclick="document.location='calendar.html'">Home</a>--> 
+        <div id="displayMsgContent">
+
+        </div>
+      </div>
+      
+            
+
+<div id="outmessage" data-role="page" style="	background-color:#E8E8E8;">
+     <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+     <div data-theme="a" data-role="header">
+            <h3 id="theoutHeader" style="margin-left:auto;">
+           
+            </h3>
+      </div>
+    <!-- <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+        <!--<a class="button disabled blueButton" style=" float: left;margin-left: 82px;position: relative;" href="#" onclick="document.location='calendar.html'">Home</a>--> 
+        <div id="displayOutMsgContent">
+        
+        </div>
+      </div>
+
+      
+<!--After click on plus-->
+ <div id="new" data-role="page" >
+ <img data-role="header" data-id="myheader" data-position="fixed" src="img/image1_01.png" style="width:100%;"/>
+<!--		<img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>-->
+		<div data-theme="a" data-role="header">
+		       <a data-role="button" data-theme="a" data-inline="true" data-transition="none" href="#Bothmsg"
+        data-icon="delete" data-iconpos="right" data-mini="true">
+            Cancel
+        </a>
+            <h3 style="margin-left:auto;">
+            Compose
+            </h3>
+              
+        <a data-role="button" data-theme="a" data-inline="true" data-transition="none" href="#"
+        data-icon="check" data-iconpos="right" onClick="sendMessage();" data-mini="true">
+            Send
+        </a>
+
+		</div>
+    <div data-role="content">
+       <div id="error" style="color:#FFF"></div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+             <div id="error" style="color:red";></div>
+                <label for="sendMessageTo" style="color:white;">
+                    To:
+                </label>
+                  <input type="text"  id="sendMessageToText" name="name" value="" data-mini="true">
+                  <input type="hidden" id="sendMessageTo" name="nameid" value="">   
+                   
+            </fieldset>
+            <script>
+                  var randno = Math.floor(Math.random()*1000);
+					jQuery("#sendMessageToText").coolautosuggest({
+						url:ip+"messages/autosuggestion/?school_id="+localStorage.getItem('Schoolid')+"&chars=",
+						showThumbnail:false,
+						showDescription:false,
+						onSelected:function(result){
+						  // Check if the result is not null
+						  if(result!=null){
+						    jQuery("#sendMessageTo").val(result.id); // Get the ID field
+						   
+						  }
+						  else{
+						    jQuery("#sendMessageTo").val(""); // Empty the ID field
+						   
+						  }
+						}
+					});  
+					</script>      
+        </div>
+        <div data-role="fieldcontain">
+           <fieldset data-role="controlgroup">
+                <label for="messageSubject" style="color:white;">
+                    Subject:
+                </label>
+                <input name="subject" id="messageSubject" placeholder="Message Subject"
+                value="" type="text" data-mini="true">
+            </fieldset>
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <label for="MyMessage">
+                </label>
+                <textarea name="" id="MyMessage" placeholder="My Message"  ></textarea>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+  <!-- Message Block Ends Here--> 
+ 
+<!--**************************************** End message page ****************************************-->   
+   
+      
+   
+  </body>
+  </html>

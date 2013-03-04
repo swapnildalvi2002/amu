@@ -1,0 +1,492 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<title>jQuery Mobile: Demos and Documentation</title>-->
+     <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.2.0.css" type="text/css">
+   
+    <!--<link rel="stylesheet"  href="jquery.mobile/jquery.mobile-1.1.0.css" />-->
+    <link rel="stylesheet" href="docs/assets/css/jqm-docs.css" />
+    <link rel="stylesheet" href="docsdemos-style-override.css" />
+    <!-- Libraries JS files Start-->
+	   	<script type="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></script>
+				<script src="jquery.mobile/custom-scripting.js"></script>
+    <script type="text/javascript" src="jquery.mobile/jquery.mobile-1.2.0.js"></script>
+    <script type="text/javascript" src="javascripts/libs/prototype.js"></script>
+    <script type="text/javascript" src="javascripts/libs/cordova-2.2.0.js"></script>    
+    <script type="text/javascript" src="javascripts/libs/googleCharts.js"></script>
+    <script type="text/javascript">
+          google.load('visualization', '1', {'packages':['corechart']});
+    </script>
+    <script type="text/javascript" src="javascripts/libs/jquery.coolautosuggest.js"></script>  
+    <script type="text/javascript" src="javascripts/main.js"></script>
+    <!-- Libraries JS files End-->
+    <!-- Application JS files Start-->
+    <script type="text/javascript" src="javascripts/config.js"></script>    
+    	<script type="text/javascript" src="javascripts/login.js"></script>
+    <script type="text/javascript" src="javascripts/parent.js"></script>
+    <script type="text/javascript" src="javascripts/cal.js"></script>
+    <script type="text/javascript" src="javascripts/performance.js"></script>
+    <script type="text/javascript" src="javascripts/performance_graph.js"></script>
+    <script type="text/javascript" src="javascripts/attendance.js"></script>
+    <script type="text/javascript" src="javascripts/fees.js"></script>
+    <script type="text/javascript" src="javascripts/feelist.js"></script>
+    <script type="text/javascript" src="javascripts/message.js"></script>
+      <!-- Application JS files End-->
+    <!-- Uncomment following line to access PhoneGap APIs (not necessary to use PhoneGap to package web app) -->
+    <!-- <script type="text/javascript" charset="utf-8" src="cordova-2.2.0.js"></script>-->
+  
+    
+  
+
+    <!-- CDN Respositories: For production, replace lines above with these uncommented minified versions -->
+    <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />-->
+    <!-- <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>-->
+    <!-- <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+    <script>
+	function login()
+	{
+	  alert("Move to second page");
+	  return true;
+	}
+	</script>-->
+    </head> 
+  <body > 
+  
+  
+  <!-- begin first page -->
+  <section id="mainpage" data-role="page" data-transition="none" >
+  <!--<header data-role="header" data-id="myheader"><img src="img/skoolcloudheader.png" style="width:100%;"/></header>-->
+  <img data-role="header" data-id="mainheader" src="img/skoolcloudheader.png" style="width:100%;"/>
+  <div data-role="content" data-transition="none" >
+    <div data-role="fieldcontain">
+            <label for="name" >Username:</label><br>
+            <input type="text" name="name" id="username"/><br>
+            <label for="password">Password:</label><br>
+            <input type="password" name="password" id="password"/><br>
+             <input type="submit" onClick="login()" data-inline="true" data-theme="a" data-icon="arrow-r" data-iconpos="right" value="Login"/>
+           <!-- <a href="#page2" data-role="button" data-inline="true" data-theme="a" onClick="login()">Login</a>-->
+    </div>
+    </div>
+  </section>
+  
+  <!-- end first page -->
+  
+  
+   <!-- **********************************Start of Parent Access****************************************--> 
+   
+   <section id="parent" data-role="page" >
+        <div>
+            <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+            <div data-theme="e" data-role="header">
+                <h3>
+                Select Student
+                </h3>
+            </div>
+            <div data-role="content">
+                <div id="stdTable"></div>
+                </div>
+            </div>
+    </section>     
+        
+   
+   
+   <!-- **********************************End of Parent Access****************************************-->
+   
+    
+     
+  
+  <!--********************************************* Start Home page *********************************-->
+  <section id="page2" data-role="page" data-transition="none">
+  
+  <!--<header data-role="header" data-id="myheader" data-position="fixed"><img src="img/biu.png" style="width:100%;"/></header>-->
+  
+  <img data-role="header" data-id="myheader" data-position="fixed" src="img/biu.png" style="width:100%;"/>
+  <!--Grid Icon Structure Start-->
+  
+   <div data-role="content" >
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+            <a href="#calendar" onClick="calendarDisplay()" ><img border="0" src="img/icon/calendar.png" style="width:60%;"/></a> 
+            </div>
+            <div class="ui-block-b">
+            <a href="#performance"  ><img border="0" src="img/icon/performance.png" style="width:60%;" /></a> 
+            </div>
+            <div class="ui-block-a">
+             <a href="#attendance" onClick="graphData()"  ><img border="0" src="img/icon/attendance.png" style="width:70%;"/></a>             
+            </div>
+            <div class="ui-block-b">
+            <a href="#fees" onClick="feeStructure()"  ><img border="0" src="img/icon/fees.png" style="width:70%;" /> </a>            
+            </div>
+            <div class="ui-block-a">
+            <a href="#msg" ><img border="0" src="img/icon/message.png" style="width:70%;"/></a>
+            </div>
+            <div class="ui-block-b">
+              <img border="0" src="img/icon/logout.png" style="width:70%;" onClick="logout()"/></div>
+        </div>
+    </div>
+    <!--Grid Icon Structure End-->
+</section>
+<!--********************************************* End Home page **************************************************-->
+
+   
+   <!-- **********************************Start of Performance icon****************************************--> 
+
+  <!-- Start of Performance page -->
+  <section id="performance" data-role="page" >
+
+    <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+    <div data-theme="e" data-role="header">
+     <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3>
+            Performance
+        </h3>
+    </div>
+    <div data-role="content" >
+        <ul data-role="listview" data-divider-theme="" data-inset="true">
+            <li data-theme="b" onClick="performanceSubject()">
+                <a href="#">Comparative Analysis</a>
+             </li>
+            <li data-theme="b" onClick="performanceTest()">
+                <a href="#">Score By Test</a>
+             </li>
+        </ul>
+    </div>
+ 
+
+</section> 
+  <!-- End of Performance page -->
+ 
+ <!--******** Start of Subjectlist page ********-->
+<section id="subjectList" data-role="page" data-transition="none">
+<!--<header data-role="header" data-id="myheader" data-position="fixed"><img src="img/biu.png" style="width:100%;"/></header>-->
+    <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+    <div data-theme="e" data-role="header">
+        <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3>
+        Comparetive Analysis
+        </h3>
+    </div>
+
+    <div data-role="content">
+    <div id='Slist'>
+        <ul id="subject" data-role="listview" data-divider-theme="" data-inset="true">
+        <li data-theme="b" onClick="getPerformanceAnalysisData('all');">
+        <a href="#">All</a>
+        </li>
+        </ul>
+     </div>
+    </div>
+
+</section>
+   <!-- *************End of Subjectlist page **********-->
+  
+  
+   <!-- *************Start of Testlist page ************-->
+  <section id="testList" data-role="page" data-transition="none">
+  <!--<header data-role="header" data-id="myheader" data-position="fixed"><img src="img/biu.png" style="width:100%;"/></header>-->
+   <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+    <div data-theme="e" data-role="header">
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3>
+            Score By Test
+        </h3>
+    </div>
+
+      <div data-role="content">
+      <div id='Tlist'>
+        <ul id='test' data-role="listview" data-divider-theme="" data-inset="true">           
+        </ul>
+     </div>   
+    </div>
+  </section>
+   <!--********** End of Testlist page ********--> 
+  
+    <!-- **********Start of Subjectgraph page *********--> 
+<section id="performanceGraphDisplay" data-role="page" data-transition="none">
+    <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+      <div data-theme="e" data-role="header">
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3>
+							Status
+        </h3>
+    </div>
+		 <div data-role="content">
+       <div id="performanceGraph" style="min-height:500px">
+        </div>
+   </div>
+</section>
+    <!--********* End of Subjectgraph page *********--> 
+    <!--******** Start of Testgraph page ********--> 
+<section id="testGraphDisplay" data-role="page" data-transition="none">
+    <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+      <div data-theme="e" data-role="header">
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3>
+							Status
+        </h3>
+    </div>
+		 <div data-role="content">
+       <div id="testGraph" style="min-height:500px">
+        </div>
+    </div>
+</section>
+    <!--************* End of Testgraph page *******--> 
+   <!-- ***********************************End of Performance icon****************************************-->
+ 
+    <!-- **********************************Start of Attendance icon****************************************--> 
+ 
+  <!--******** Start of Attendance items page ********--> 
+ <section id="attendance" data-role="page" >
+    <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+        <div data-theme="e" data-role="header">
+         <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3>
+            Attendance Analysis
+        </h3>
+    </div>
+
+   
+    <div data-role="content" >
+        <ul data-role="listview" data-divider-theme="" data-inset="true">
+              <li data-theme="b" onclick="attendance()">
+              <a href="#">Full Attendance Analysis</a>
+              </li>
+              <li data-theme="b" onclick="DASpine()">
+              <a href="#">Days Attended Vs Average</a>
+              </li>
+              <li data-theme="b" onclick="SDSpine()">
+              <a href="#">Sick Days Vs Average</a>
+              </li>
+              <li data-theme="b" onclick="LDSpine()">
+              <a href="#">Late Days Vs Average</a>
+              </li>
+        </ul>
+    </div>
+
+  </section>
+    <!--*********** End of Attendance items page *********-->
+   <!--******** Ploting Attendance/graph page ********
+ <section id="attendanceIconGraph" data-role="page">
+    <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+     <div data-theme="e" data-role="header">
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3>
+            Status
+        </h3>
+          <a href="#attendance" data-iconpos="notext" data-icon="back"></a>
+    </div>
+     <div id='mainform' style="min-height:500px;">
+     </div>
+  
+ </section>-->
+ 
+<section id="attendanceIconGraph" data-role="page">
+    <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+      <div data-theme="e" data-role="header">
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3>
+							Status
+        </h3>
+    </div>
+		 <div data-role="content">
+				  <div id="mainform" style="min-height:500px">
+				  </div>
+		  </div>
+  </section> 
+ 
+    <!-- **********************************End of Attendance icon****************************************--> 
+    
+     <!-- **********************************Start of Fees icon****************************************--> 
+ 
+ 
+  <!--***** Start of monthList page *****-->
+   <section id="fees" data-role="page" data-transition="none">
+  <!--<header data-role="header" data-id="myheader" data-position="fixed"><img src="img/biu.png" style="width:100%;"/></header>-->
+   <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+    <div data-theme="e" data-role="header">
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3>
+            Fees
+        </h3>
+    </div>
+   
+    <div data-role="content">
+    <div id="monthList">
+            <ul id="month" data-role="listview" data-divider-theme="" data-inset="true">
+            <li data-theme="b" onclick="getFeeData('all')"><a href="#">All</a></li>
+            </ul>
+    </div> 
+
+  </div> 
+  
+  </section>
+
+   <!--****** End of monthList page *******-->
+ 
+   <!--******* Start of FeeDetail page *********-->
+  <section id="feeDetail" data-role="page" >
+  <!--<header data-role="header" data-id="myheader" data-position="fixed"><img src="img/biu.png" style="width:100%;"/></header>-->
+   <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+    <div data-theme="e" data-role="header">
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3>
+            Fee Detail
+        </h3>
+    </div>
+    <div data-role="content">
+        <div id="feeTable">
+        </div> 
+   </div> 
+  </section>
+   <!--******* End of FeeDetail page *********-->
+   
+    <!--******* Start of paymentInfo page *********-->
+
+  <section id="paymentInfo" data-role="page" >
+  <!--<header data-role="header" data-id="myheader" data-position="fixed"><img src="img/biu.png" style="width:100%;"/></header>-->
+   <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+    <div data-theme="e" data-role="header">
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3>
+            Payment detail
+        </h3>
+    </div>
+    <div data-role="content">
+        <div id="paymentTable">
+        </div> 
+   </div> 
+  </section>
+
+    
+  
+  
+   <!--***************************************** End of Fees icon page *********************************************-->
+ 
+ 
+ 
+ 
+ <!--****************************************** Start calendar icon ************************************-->
+  <section id="calendar" data-role="page">
+  <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+   <div data-theme="e" data-role="header">
+      <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+        <h3>
+            Calendar
+        </h3>
+    </div>
+    <div data-role="content">
+			  <div id="calendarDisplay" style="min-height:250px">
+			  </div>
+  </div>
+  </section>
+ <!--****************************************** Start End icon ************************************-->
+  
+  <!--******************************** Start message page ************************************-->
+  <section id="msg" data-role="page" data-transition="none">
+        <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+        <div data-theme="e" data-role="header">
+            <a href="#page2" data-iconpos="notext" data-icon="home"></a>
+            <h3>
+            Message
+            </h3>
+            <a href="#new" data-iconpos="notext" data-icon="plus"></a>  
+        </div>
+        <div data-role="content">   
+            <ul data-role="listview" data-divider-theme="" data-inset="true">
+            <li data-theme="b"><a href="#messages" onClick="inbox();">Inbox</a></li>
+            <li data-theme="b"><a href="#messages" onClick="outbox();">Sent</a></li>
+            </ul>
+        </div>
+  </section>   
+   
+  <div id="messages" data-role="page">
+        <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+            <ul data-role="listview" data-divider-theme="" data-inset="true">
+            </ul>
+       
+  </div>    
+
+    <div id="message" data-role="page">
+     <img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+        <!--<a class="button disabled blueButton" style=" float: left;margin-left: 82px;position: relative;" href="#" onclick="document.location='calendar.html'">Home</a>--> 
+        <div style="background-color:black;margin-top:10%;" id="displayMsgContent">
+        </div>
+      </div>
+<!--After click on plus-->
+ <div data-role="page" id="new">
+		<img data-role="header" data-id="myheader" src="img/biu.png" data-position="fixed" style="width:100%;"/>
+		<div data-theme="e" data-role="header">
+        <a data-role="button" href="#msg" data-icon="back" data-iconpos="left"
+        class="ui-btn-left">
+            Back
+        </a>
+            <h3>
+            New message
+            </h3>
+		</div>
+    <div data-role="content">
+        <a data-role="button" data-theme="b" data-inline="true" data-transition="none" href="#msg"
+        data-icon="delete" data-iconpos="right">
+            Cancel
+        </a>
+        <a data-role="button" data-theme="b" data-inline="true" data-transition="none" href="#"
+        data-icon="check" data-iconpos="right" onClick="sendMessage();">
+            Send
+        </a>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+             <div id="error" style="color:red";></div>
+                <label for="sendMessageTo">
+                    To:
+                </label>
+                <input name="nameid" id="sendMessageToText" placeholder="" value="" type="text">
+                <input type="hidden" name="nameid" value="" id="sendMessageTo">
+            </fieldset>
+        </div>
+        <div data-role="fieldcontain">
+           <fieldset data-role="controlgroup">
+                <label for="messageSubject">
+                    Subject:
+                </label>
+                <input name="subject" id="messageSubject" placeholder="Message Subject"
+                value="" type="text">
+            </fieldset>
+        </div>
+        <div data-role="fieldcontain">
+            <fieldset data-role="controlgroup">
+                <label for="MyMessage">
+                </label>
+                <textarea name="" id="MyMessage" placeholder="My Message"></textarea>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<script language="javascript" type="text/javascript">
+var randno = Math.floor(Math.random()*1000);
+					jQuery("#sendMessageToText").coolautosuggest({
+						url:ip+"/messages/autosuggestion/?school_id="+localStorage.getItem('Schoolid')+"&randno="+randno+"&chars=",
+						showThumbnail:false,
+						showDescription:false,
+						onSelected:function(result){
+						  // Check if the result is not null
+						  if(result!=null){
+						    jQuery("#sendMessageTo").val(result.id); // Get the ID field
+						   
+						  }
+						  else{
+						    jQuery("#sendMessageTo").val(""); // Empty the ID field
+						   
+						  }
+						}
+					});
+				</script>
+  <!-- Message Block Ends Here--> 
+<!--**************************************** End message page ****************************************-->   
+   
+ 
+      
+   
+  </body>
+  </html>
